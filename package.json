@@ -1,8 +1,8 @@
 {
   "name": "wx-auto",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "lib/index.js",
-  "description": "微信开发者工具，HTTP调用，自动预览，提高工作效率",
+  "description": "微信开发者工具，HTTP调用，自动预览，一键打包上传，提高工作效率",
   "license": "MIT",
   "repository": "git@github.com:ma125120/wx-auto.git",
   "author": "马鹏达",
@@ -15,10 +15,10 @@
     "b": "node bin/index.js"
   },
   "dependencies": {
-    "axios": "^0.19.0",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "open": "^6.4.0"
   },
   "devDependencies": {
     "jest": "^24.8.0"
