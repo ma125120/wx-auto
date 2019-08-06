@@ -40,7 +40,7 @@ function start() {
     /\"/g,
     `\\"`
   );
-  config.port = getHttpPort();
+  // config.port = getHttpPort();
 
   run(config, program.type);
 }
