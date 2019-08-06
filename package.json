@@ -1,6 +1,6 @@
 {
   "name": "wx-auto",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "lib/index.js",
   "description": "微信开发者工具，HTTP调用，自动预览，一键打包上传，提高工作效率",
   "license": "MIT",
