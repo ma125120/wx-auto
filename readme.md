@@ -21,6 +21,12 @@ wxauto
 wxauto -t preview -c auto.js
 ```
 
+## 注意事项
+需要事先在微信开发者工具中打开HTTP端口：
+```
+微信开发者工具 -> 查看所有项目 -> 设置 -> 安全，里面有个服务端口，打开就有了
+```
+
 ## 参数(均有默认值)
 ```javascript
 -t, --type 类型，目前支持preview和upload
@@ -44,3 +50,4 @@ wxauto -t preview -c auto.js
   }
 };
 ```
+
