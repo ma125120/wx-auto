@@ -5,6 +5,8 @@ const isWin = os.platform() === `win32`;
 const promisify = require("util").promisify;
 let { exec } = require("child_process");
 exec = promisify(exec);
+const chalk = require("chalk");
+const log = console.log;
 
 function getHttpPort() {
   const home = os.homedir();
@@ -33,9 +35,16 @@ function getDist(config = {}) {
   );
 }
 
+function getResultInfo(result, prefix,) {
+  const flag = /success/g.test(result.stdout);
+  flag ? log(chalk.green(`${prefix}成功`)) : log(chalk.red(`${result.stdout}`))
+  return flag; 
+}
+
 module.exports = {
   getHttpPort,
   getPath,
   getDist,
-  exec
+  exec,
+  getResultInfo
 };

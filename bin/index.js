@@ -10,7 +10,9 @@ const { getPath, getHttpPort, getDist } = require("../util/index");
 
 program
   .option("-c, --config <type>", "config file", "auto.js")
-  .option("-t, --type <type>", "auto type, etc: preview, upload", "preview")
+  .option("-d, --desc <type>", "upload desc", "")
+  .option("--open", "auto open browser")
+  .option("-t, --type <type>", "auto type, etc: preview, upload",)
   .parse(process.argv);
 
 const CD = process.cwd();
@@ -40,7 +42,10 @@ function start() {
     /\"/g,
     `\\"`
   );
+  config.upload = config.upload || {};
+  config.upload.desc = config.upload.desc || program.desc;
+  config.open = program.open || config.open;
   // config.port = getHttpPort();
 
-  run(config, program.type);
+  run(config, program.type || config.type || "preview");
 }
