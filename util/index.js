@@ -29,10 +29,8 @@ function getPath(projectpath, msg) {
 
 function getDist(config = {}) {
   const { projectpath } = config;
-  return (
-    config.dist ||
-    (/dist\/?$/.test(projectpath) ? projectpath : (projectpath || "") + `/dist`)
-  );
+  const dist = projectpath + '/' + require(projectpath + `/project.config.json`).miniprogramRoot
+  return dist;
 }
 
 function getResultInfo(result, prefix,) {
