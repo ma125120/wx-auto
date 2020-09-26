@@ -22,7 +22,10 @@ npx wxauto -t preview -c auto.js
 ```
 
 ## 注意事项
-需要事先在微信开发者工具中打开HTTP端口：
+1. **事先在环境变量中添加微信开发开发者工具的路径**
+
+
+2. 需要事先在微信开发者工具中打开HTTP端口：
 ```
 微信开发者工具 -> 查看所有项目 -> 设置 -> 安全，里面有个服务端口，打开就有了
 ```
@@ -37,17 +40,20 @@ npx wxauto -t preview -c auto.js
 ## 配置文件 auto.js
 ```javascript
 {
-  cli: "D:/soft/微信web开发者工具", // cli文件所在的目录
-  projectpath: `D:/www/react/heywoof-app-frontend`, // 项目地址
+  projectPath: `D:/www/react/heywoof-app-frontend`, // 项目地址，win下需要使用双反斜杠
   compile: {
     pathName: `pages/scene/index`, // 自动预览的页面路径
-    query: `activityId=5d45050569515b000c5b740a` // 查询参数，微信目前有BUG，只能识别一个参数
+    query: `activityId=5d45050569515b000c5b740a` // 查询参数
   },
   // build: `yarn build-test:weapp`, // 上传之前需要执行的命令
   upload: {
     version: "1.0.1",
     desc: "测试自动上传，不要乱动"
-  }
+  },
+  // 类型，目前支持 auto-preview, preview, upload
+  type: "auto-preview",
+  // debounce时间
+	time: 50,
 };
 ```
 
