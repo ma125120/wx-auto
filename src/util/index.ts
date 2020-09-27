@@ -40,12 +40,16 @@ export function getPath(projectPath, msg) {
 
   const nowPath = projectPath.split(path.sep).join(`/`);
 
+  return nowPath;
+}
+
+export function getDist(nowPath) {
   const projectConfig = require(nowPath + `/project.config.json`)
   if (!projectConfig) {
     throw new Error(`项目路径下必须含有project.config.json`);
   }
 
-  return nowPath;
+  return path.resolve(nowPath, projectConfig.miniprogramRoot || "");
 }
 
 export function getResultInfo(result, prefix,) {
