@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import chalk from 'chalk'
-import { exec, log } from '../util';
+import { exec, log } from '../util/index';
 
 const debounce = require("lodash.debounce");
 

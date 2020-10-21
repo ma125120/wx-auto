@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import * as os from 'os'
 import * as path from 'path'
 import chalk from 'chalk'
-import { exec, log } from '../util';
+import { exec, log } from '../util/index';
 import { startServer, updateHtml } from '../util/server';
 const debounce = require("lodash.debounce");
 

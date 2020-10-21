@@ -1,5 +1,5 @@
 
-import { exec, log, } from "../util";
+import { exec, log, } from "../util/index";
 
 import openUrl from 'open'
 const chalk = require("chalk");
