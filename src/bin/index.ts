@@ -9,7 +9,7 @@ import { getCliPath, getDist, getPath } from '../util';
 program
   .option("-c, --config <type>", "config file，配置文件名，默认为auto.js", "auto.js")
   .option("-d, --desc <type>", "upload desc，上传描述", "")
-  .option("-t, --type <type>", "auto type, etc: preview, auto-preview, upload，自动类型", "auto-preview")
+  .option("-t, --type <type>", "auto type, etc: preview, auto-preview, upload，自动类型", )
   .option("--qr <qr>", "qr name， 生成的二维码图片名", "1.png")
   .parse(process.argv);
 
@@ -42,9 +42,9 @@ function start() {
     ).replace(/\s+/g, ``),
     upload: {
       ...(config.upload || {}),
-      desc: program.desc || ""
+      desc: program.desc || config.upload && config.upload.desc || ""
     },
-    type: program.type || config.type,
+    type: program.type || config.type || "auto-preview",
     qr: program.qr || config.qr,
   };
   config.dist = getDist(config.projectPath)
